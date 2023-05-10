@@ -1,89 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Date hoje?</title>
-    <style>
-      /* Estilos para centralizar a pergunta */
-      #pergunta {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 48px;
-        text-align: center;
-        font-family: Arial, sans-serif;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Date hoje?</title>
+  <link rel="stylesheet" href="./ccs.css">
+  <style>
+    /* Estilos para centralizar a pergunta */
+    #pergunta {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
 
-      /* Estilos para alinhar os botões abaixo da pergunta */
-      #botoes {
-        position: absolute;
-        top: calc(50% + 30px);
-        left: 40%;
-        transform: translate(-50%);
-      }
+    /* Estilos para alinhar os botões abaixo da pergunta */
+    #botoes {
+      position: absolute;
+      top: calc(50% + 30px);
+      left: 40%;
+      transform: translate(-50%);
+    }
 
-      /* Estilos para o botão "Não" */
-      #nao {
-        display: inline-block;
-        margin-right: 20px;
-        padding: 10px;
-        font-size: 36px;
-        background-color: red;
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 55%;
-        transform: translateX(250%);
-      }
+    /* Estilos para o botão "Não" */
+    #nao {
+      display: inline-block;
+      margin-right: 20px;
+      padding: 10px;
+      font-size: 36px;
+      background-color: red;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 55%;
+      transform: translateX(250%);
+    }
 
-      /* Estilos para o botão "Sim" */
-      #sim {
-        display: inline-block;
-        margin-left: 20px;
-        padding: 10px;
-        font-size: 36px;
-        background-color: green;
-        color: white;
-      }
+    /* Estilos para o botão "Sim" */
+    #sim {
+      display: inline-block;
+      margin-left: 20px;
+      padding: 10px;
+      font-size: 36px;
+      background-color: green;
+      color: white;
+    }
 
-      /* Estilos para o fundo e as letras */
-      body {
-        background-color: black;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="pergunta">Date hoje às 21h?</div>
-    <div id="botoes">
-      <button id="sim">Sim, mozão ❤️</button>
-      <button id="nao">Não</button>
-    </div>
-    <script>
-      // Obter as dimensões iniciais do botão "Não"
-      var nao = document.getElementById("nao");
-      var naoRect = nao.getBoundingClientRect();
-      var naoTop = naoRect.top;
-      var naoLeft = naoRect.left;
-      var naoWidth = naoRect.width;
-      var naoHeight = naoRect.height;
+    /* Estilos para o fundo e as letras */
+    body {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<div id="pergunta">Date hoje às 21h?</div>
+<div id="botoes">
+  <a href="#" id="sim" class="button">Sim, mozão ❤️</a>
+  <a href="#" id="nao" class="button">Não</a>
+</div>
+<script>
+  // Obter as dimensões iniciais do botão "Não"
+  var nao = document.getElementById("nao");
+  var naoRect = nao.getBoundingClientRect();
+  var naoTop = naoRect.top;
+  var naoLeft = naoRect.left;
+  var naoWidth = naoRect.width;
+  var naoHeight = naoRect.height;
 
-      // Obter a altura da janela do navegador
-      var windowHeight = window.innerHeight;
+  // Obter a altura da janela do navegador
+  var windowHeight = window.innerHeight;
 
-      // Redirecionar para o link quando o botão "Sim" for clicado
-      document.getElementById("sim").onclick = function() {
-        window.location.href = "https://www.instagram.com/pulerestaurante/";
-      };
+  // Redirecionar para o link quando o botão "Sim" for clicado
+  document.getElementById("sim").onclick = function() {
+    window.location.href = "https://www.instagram.com/pulerestaurante/";
+  };
 
-      // Mover o botão "Não" quando o mouse passar sobre ele
-      document.getElementById("nao").onmouseover = function() {
-        var novoTop = Math.floor(Math.random() * (windowHeight - naoHeight - 800)) + "px";
-        var novoLeft = Math.floor(Math.random() * (naoLeft + naoWidth - 500)) + "px";
-        this.style.top = novoTop;
-        this.style.left = novoLeft;
-      };
-    </script>
-  </body>
+  // Mover o botão "Não" quando o mouse passar sobre ele
+  document.getElementById("nao").onmouseover = function() {
+    var novoTop = Math.floor(Math.random() * (windowHeight - naoHeight - 800)) + "px";
+    var novoLeft = Math.floor(Math.random() * (naoLeft + naoWidth - 500)) + "px";
+    this.style.top = novoTop;
+    this.style.left = novoLeft;
+  };
+</script>
+</body>
 </html>
