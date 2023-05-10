@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Date hoje?</title>
+    <style>
+      /* Estilos para centralizar a pergunta */
+      #pergunta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Estilos para alinhar os botões abaixo da pergunta */
+      #botoes {
+        position: absolute;
+        top: calc(50% + 30px);
+        left: 45%;
+        transform: translate(-50%);
+      }
+
+      /* Estilos para o botão "Não" */
+      #nao {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: red;
+        color: white;
+        position: absolute;
+        top: 150px;
+        left: 55%;
+        transform: translateX(-80%);
+      }
+
+      /* Estilos para o botão "Sim" */
+      #sim {
+        display: inline-block;
+        margin-left: 20px;
+        padding: 10px;
+        font-size: 18px;
+        background-color: green;
+        color: white;
+      }
+
+      /* Estilos para o fundo e as letras */
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pergunta">Date hoje às 21h?</div>
+    <div id="botoes">
+      <button id="nao">Não</button>
+      <button id="sim">Sim</button>
+    </div>
+    <script>
+      // Obter as dimensões iniciais do botão "Não"
+      var nao = document.getElementById("nao");
+      var naoRect = nao.getBoundingClientRect();
+      var naoTop = naoRect.top;
+      var naoLeft = naoRect.left;
+      var naoWidth = naoRect.width;
+      var naoHeight = naoRect.height;
+
+      // Obter a altura da janela do navegador
+      var windowHeight = window.innerHeight;
+
+      // Redirecionar para o link quando o botão "Sim" for clicado
+      document.getElementById("sim").onclick = function() {
+        window.location.href = "https://www.instagram.com/pulerestaurante/";
+      };
+
+      // Mover o botão "Não" quando o mouse passar sobre ele
+      document.getElementById("nao").onmouseover = function() {
+        var novoTop = Math.floor(Math.random() * (windowHeight - naoHeight - 500)) + "px";
+        var novoLeft = Math.floor(Math.random() * (naoLeft + naoWidth - 100)) + "px";
+        this.style.top = novoTop;
+        this.style.left = novoLeft;
+      };
+    </script>
+  </body>
+</html>
