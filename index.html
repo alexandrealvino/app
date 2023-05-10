@@ -32,9 +32,9 @@
         background-color: red;
         color: white;
         position: absolute;
-        top: 150px;
+        top: 0;
         left: 55%;
-        transform: translateX(220%);
+        transform: translateX(250%);
       }
 
       /* Estilos para o botão "Sim" */
@@ -79,7 +79,7 @@
 
       // Mover o botão "Não" quando o mouse passar sobre ele
       document.getElementById("nao").onmouseover = function() {
-        var novoTop = Math.floor(Math.random() * (windowHeight - naoHeight - 800)) + "px";
+        var novoTop = Math.floor(Math.random() * (naoTop - naoHeight - 800)) + "px";
         var novoLeft = Math.floor(Math.random() * (naoLeft + naoWidth - 500)) + "px";
         this.style.top = novoTop;
         this.style.left = novoLeft;
